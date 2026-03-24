@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        
+</head>
+<body onload="runOnReload()">
+    <div class="container">
+        <h1>Number Guessing Game</h1>
+        <input type="number" id="guessedNumber" placeholder = "Enter Guessed Number">
+        <button onclick="matchNumber()">Verify Guessed Number</button>
+        <p id="output"></p>
+            
+    </div>
+
+    <script>
+        let val = 0;
+        function runOnReload(){
+            val = Math.floor(Math.random()*100);
+        }
+        function matchNumber(){
+            let curr = document.getElementById("guessedNumber").value;
+            if(val==curr){
+                document.getElementById("output").innerText="You Guessed It Right";
+            } else if(val<curr){
+                document.getElementById("output").innerText="Your Guess Is Larger Than Actual Value";
+            } else {
+                document.getElementById("output").innerText="Your Guess Is Smaller Than Actual Value";
+            }
+
+        }
+    </script>
+</body>
+</html>
